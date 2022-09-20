@@ -9,13 +9,13 @@ public class Exercises05_17 {
         int maxRow = input.nextInt();
 
         for (int row = 1; row <= maxRow; row++) {
-            for (int space = maxRow - row + 5; space >= 1; space--) {
+            for (int space = maxRow - row; space > 0; space--) {
                 System.out.print("    ");
             }
-            for (int part1 = row; part1 >= 2; part1--) {
+            for (int part1 = row; part1 >= 1; part1--) {
                 System.out.printf("%3d ", part1);
             }
-            for (int part2 = 1; part2 <= row; part2++) {
+            for (int part2 = 2; part2 <= row; part2++) {
                 System.out.printf("%3d ", part2);
             }
             System.out.println();
