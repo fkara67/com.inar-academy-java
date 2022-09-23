@@ -13,7 +13,7 @@ public class Listing05_11 {
         while (decimal != 0) {
             int hexValue = decimal % 16;
             char hexDigit = (hexValue <= 9 && hexValue >= 0)?
-                    (char)(hexValue + '0') : (char)(hexValue - 10 + 'A');
+                    (char) (hexValue + '0') : (char)(hexValue - 10 + 'A');
             hex = hexDigit + hex;
             decimal /= 16;
         }
