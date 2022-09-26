@@ -1,6 +1,6 @@
 package chapters.chapter_05;
 
-import org.omg.Messaging.SyncScopeHelper;
+
 
 public class Exercises_05_24 {
     public static void main(String[] args) {
