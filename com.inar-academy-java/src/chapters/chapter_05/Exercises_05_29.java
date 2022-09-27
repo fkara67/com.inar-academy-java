@@ -13,7 +13,7 @@ public class Exercises_05_29 {
         int dayNameNumber = inputDay;
         int numberOfDay = 0;
         String nameOfMonth = "";
-        int count = -1;
+        int count = 1;
 
         for (int month = 1; month <= 12; month++) {
 
@@ -71,21 +71,25 @@ public class Exercises_05_29 {
                 case 12: numberOfDay = 31;
                          nameOfMonth = "December";
             }
-            System.out.println("\n\t\t\t\t" + nameOfMonth + " " + year +
+            System.out.println("\n\t\t\t\t\t" + nameOfMonth + " " + year +
                     "\n   ------------------------------------------------------");
             System.out.println("\tSun\t\tMon\t\tTue\t\tWed\t\tThu\t\tFri\t\tSat");
-            System.out.println("\t");
 
-            for (int i = 1; i <= inputDay + 1; i++) {
-                System.out.print("\t");
+
+            for (int i = 0; i < inputDay; i++) {
+                System.out.print("\t\t");
                 count++;
+
+
             }
             for (int i = 1; i <= numberOfDay; i++) {
-                count++;
+                System.out.printf("%8d", i);
+
                 if (count % 7 == 0)
-                    System.out.println(i);
-                else
-                    System.out.printf("\t%2d\t",i);
+                    System.out.println();
+                count++;
+
+
             }
 
 
