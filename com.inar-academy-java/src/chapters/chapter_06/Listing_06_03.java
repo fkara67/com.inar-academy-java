@@ -7,7 +7,7 @@ public class Listing_06_03 {
 
     }
 
-    private static String getGrade(double score) {
+    public static String getGrade(double score) {
         if (score >= 90) {
             return "A";
         }

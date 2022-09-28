@@ -12,7 +12,7 @@ public class Listing_06_08 {
         
     }
 
-    private static int hexToDecimal(String hex) {
+    public static int hexToDecimal(String hex) {
         int decimalValue = 0;
         for (int i = 0, j = hex.length() - 1; i < hex.length() && j >= 0; i++, j--) {
             char hexChar = hex.charAt(i);
@@ -22,9 +22,9 @@ public class Listing_06_08 {
 
     }
 
-    private static int hexCharToDecimal(char ch) {
+    public static int hexCharToDecimal(char ch) {
         if (ch >= 'A' && ch <= 'F') {
-            return 10 + ch - 'A';
+            return ch - 'A' + 10;
         }
         else // ch is '0', '1', ..... '8' or '9'
         return ch - '0';

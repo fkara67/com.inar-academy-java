@@ -9,7 +9,7 @@ public class Listing_06_04 {
         System.out.println("After the invocation x is " + x);
     }
 
-    private static void increment(int n) {
+    public static void increment(int n) {
         n++;
         System.out.println("Inside the method n is " + n);
     }

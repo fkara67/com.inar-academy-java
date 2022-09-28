@@ -2,7 +2,7 @@ package chapters.chapter_06;
 
 public class Listing_06_01 {
     public static void main(String[] args) {
-        int i = 2;
+        int i = 3;
         int j = 7;
         int k = max(2,7);
 
@@ -10,7 +10,7 @@ public class Listing_06_01 {
 
     }
 
-    private static int max(int num1, int num2) {
+    public static int max(int num1, int num2) {
         int result;
 
         if (num1 > num2) {
