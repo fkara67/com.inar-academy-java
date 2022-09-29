@@ -7,15 +7,15 @@ public class Listing_06_07 {
     }
 
     public static void printPrimeNumbers(int numberOfPrimes) {
-        final int NUMBER_OF_PRIMES_PER_LINE = 50;
+        final int NUMBER_OF_PRIMES_PER_LINE = 10;
         int primeCount = 0;
         int number = 2;
 
-        while (primeCount < NUMBER_OF_PRIMES_PER_LINE) {
+        while (primeCount < numberOfPrimes) {
             if (isPrime(number)) {
                 primeCount++;
                 System.out.printf("%-4d",number);
-                if (primeCount % 10 == 0){
+                if (primeCount % NUMBER_OF_PRIMES_PER_LINE == 0){
                     System.out.println();
                 }
 
@@ -27,7 +27,7 @@ public class Listing_06_07 {
     }
 
     public static boolean isPrime(int number) {
-        for (int divisor = 2; divisor < number / 2; divisor++) {
+        for (int divisor = 2; divisor <= number / 2; divisor++) {
             if (number % divisor == 0) {
                 return false;
             }

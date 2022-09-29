@@ -12,10 +12,10 @@ public class Exercises_06_06 {
     public static void displayPattern(int n) {
         for (int i = 1; i <= n; i++ ) {
             for (int space = n - i; space > 0; space--) {
-                System.out.print("  ");
+                System.out.print("     ");
             }
             for (int part = i; part > 0; part--) {
-                System.out.printf("%2d",part);
+                System.out.printf("%5d",part);
             }
             System.out.println();
         }
