@@ -10,12 +10,12 @@ public class Exercises_06_02 {
         System.out.println("The sum of the digits of integer " + number + " is " + sumDigits(number));
     }
 
-    public static int sumDigits(int n) {
+    public static int sumDigits(long n) {
         int sumOfDigits = 0;
-        int remainningDigits = n;
-        while (remainningDigits != 0) {
-            sumOfDigits += remainningDigits % 10;
-            remainningDigits /= 10;
+        long remainingDigits = n;
+        while (remainingDigits != 0) {
+            sumOfDigits += remainingDigits % 10;
+            remainingDigits /= 10;
         }
         return sumOfDigits;
     }

@@ -7,6 +7,7 @@ public class Exercises_06_20 {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a string: ");
         String s = input.nextLine();
+        System.out.println("The count of letters of the string: ");
         System.out.println(countLetters(s));
     }
     public static int countLetters(String s) {
