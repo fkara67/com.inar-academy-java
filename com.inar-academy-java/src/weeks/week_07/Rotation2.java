@@ -3,27 +3,44 @@ package weeks.week_07;
 import java.util.Scanner;
 
 public class Rotation2 {
+    /**
+     * Are the words rotation to one another?
+     * InarAcademy --> demyInarAca   (true) AcademyInar, arAcademyIn // InAcademyar
+     * Canada      --> daCana        (true)
+     * America     --> riAmeca       (false)
+     */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String str = input.nextLine();
-        String strNew = input.nextLine();
-        System.out.println(reverseWord(str,strNew));
+        String s1 = input.nextLine();
+        String s2 = input.nextLine();
+        boolean result = isRotationToOneOther(s1,s2,false);
+        System.out.println(result);
 
     }
-    public static boolean reverseWord(String str, String strNew) {
-        boolean isReverse = true;
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i; j < str.length(); j++) {
-                if ((strNew == str.substring(j) + str.substring(0, i))) {
-                    isReverse = true;
-                }
-            }
+    public static boolean isRotationToOneOther(String s1, String s2, boolean isRotation) {
+        if (s1.length() != s2.length()) {
+            return false;
         }
-        return isReverse;
 
 
+        //InarAcademy --> demyInarAca true
+        for (int i = 0; i < s1.length(); i++) {
+            //TODO implementation
+            if (s2.equals(rotation(s1,i))) {
+                return true;
+            }
 
-
-
+        }
+        return false;
+    }
+    public static String rotation(String s1, int i) {
+        String s3 = ""; //InarAcademy
+        for (int j = i; j < s1.length(); j++) {
+            s3 += s1.charAt(i); // demy
+        }
+        for (int j = 0; j < i; j++) {
+            s3 += s1.charAt(i); //demyInarAca
+        }
+        return s3;
     }
 }
