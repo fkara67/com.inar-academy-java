@@ -4,12 +4,10 @@ import com.sun.org.apache.bcel.internal.generic.SWITCH;
 
 public class Exercises_06_24 {
     public static void main(String[] args) {
-        displayCurrentTime();
-
+        displayCurrentTimeAndDate();
 
     }
-
-    public static void displayCurrentTime() {
+    public static void displayCurrentTimeAndDate() {
         long totalMilliseconds = System.currentTimeMillis();
         long totalSeconds = totalMilliseconds / 1000;
         long currentSecond = totalSeconds % 60;
@@ -30,7 +28,7 @@ public class Exercises_06_24 {
         String currentMonthName = getMonthName(currentMonth);
         int numberOfDaysInCurrentMonth = (int)totalDays - getNumberOfDaysTillCurrentMonth(currentYear,currentMonth);
         int startDay = Listing_06_12.getStartDay(currentYear,currentMonth);
-        String currentDayName = getDayName((startDay + numberOfDaysInCurrentMonth) % 7);
+        String currentDayName = getDayName((startDay + numberOfDaysInCurrentMonth - 1) % 7);
         System.out.println(getMonthName(currentMonth) + " " + numberOfDaysInCurrentMonth + " " +
                 currentYear + " " + currentDayName);
         System.out.println(currentHour + ":" + currentMinute + ":" + currentSecond + " GMT");
