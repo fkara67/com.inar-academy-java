@@ -36,10 +36,10 @@ public class Rotation2 {
     public static String rotation(String s1, int i) {
         String s3 = ""; //InarAcademy
         for (int j = i; j < s1.length(); j++) {
-            s3 += s1.charAt(i); // demy
+            s3 += s1.charAt(j); // demy
         }
         for (int j = 0; j < i; j++) {
-            s3 += s1.charAt(i); //demyInarAca
+            s3 += s1.charAt(j); //demyInarAca
         }
         return s3;
     }
