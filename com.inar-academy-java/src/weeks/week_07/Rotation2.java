@@ -11,7 +11,9 @@ public class Rotation2 {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.println("Enter the first string: ");
         String s1 = input.nextLine();
+        System.out.println("Enter the second string: ");
         String s2 = input.nextLine();
         boolean result = isRotationToOneOther(s1,s2,false);
         System.out.println(result);
