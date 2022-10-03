@@ -15,12 +15,17 @@ public class Exercises_06_30 {
     public static int rollDice() {
         return (int)(Math.random() * 6) + 1;
     }
+    public static int rollTwoDices() {
+        int dice1 = rollDice();
+        int dice2 = rollDice();
+        int sum = dice1 + dice2;
+        System.out.println("You rolled " + dice1 + " + " + dice2 + " = " + sum);
+        return sum;
+
+    }
     public static void rollTillWinOrLose(int sum) {
 
         while (sum != 7 || sum != sum) {
-            System.out.println("Continue roll. Please enter any character to roll.");
-            Scanner input = new Scanner(System.in);
-            String start = input.next();
             int dice1 = rollDice();
             int dice2 = rollDice();
             System.out.println("You rolled " + dice1 + " + " + dice2 + " = " + (dice1 + dice2));
@@ -35,18 +40,6 @@ public class Exercises_06_30 {
             }
 
         }
-
-    }
-    public static int rollTwoDices() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter any character to roll the dice.");
-        String start = input.next();
-
-        int dice1 = rollDice();
-        int dice2 = rollDice();
-        int sum = dice1 + dice2;
-        System.out.println("You rolled " + dice1 + " + " + dice2 + " = " + sum);
-        return sum;
 
     }
     public static void getResult(int sum) {
