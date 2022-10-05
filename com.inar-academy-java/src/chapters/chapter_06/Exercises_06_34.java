@@ -2,10 +2,9 @@ package chapters.chapter_06;
 
 import java.util.Scanner;
 
-public class Listing_06_12 {
+public class Exercises_06_34 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         System.out.println("Enter full year: ");
         int year = input.nextInt();
         System.out.println("Enter month as a number between 1 and 12: ");
@@ -13,14 +12,12 @@ public class Listing_06_12 {
 
         printMonth(year,month);
     }
-
     public static void printMonth(int year, int month) {
         // Print the headings of the calendar
         printMonthTitle(year, month);
         // Print the body of the calendar
         printMonthBody(year, month);
     }
-
     public static void printMonthTitle(int year, int month) {
         System.out.println("          " + getMonthName(month) + " " + year);
         System.out.println("------------------------------");
@@ -61,33 +58,13 @@ public class Listing_06_12 {
             if ((i + startDay) % 7 == 0) {
                 System.out.println();
             }
-
         }
         System.out.println();
     }
     public static int getStartDay(int year, int month) {
-        final int START_DAY_FOR_JAN_1_1800 = 3;
-        // Get total number of days from 1/1/1800 to month/1/year
-        int totalNumberOfDays = getTotalNumberOfDays(year, month);
-
-        // Return the start day for month/1/year
-        return (totalNumberOfDays + START_DAY_FOR_JAN_1_1800) % 7;
-    }
-
-    public static int getTotalNumberOfDays(int year, int month) {
-        int total = 0;
-
-        for (int i = 1800; i < year; i++) {
-            if (isLeapYear(i))
-                total += 366;
-            else
-                total += 365;
-        }
-            // Add days from Jan to the month prior to the calendar month
-            for (int i = 1; i < month; i++)
-                total += getNumberOfDaysInMonth(year, i);
-
-        return total;
+        int startDay = (26 * (month + 1) / 10 + year % 100 + (year % 100) / 4 +
+                (year / 100) / 4 + 5 * (year / 100)) % 7;
+        return startDay;
     }
     public static int getNumberOfDaysInMonth(int year, int month) {
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
@@ -105,5 +82,4 @@ public class Listing_06_12 {
         return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
 
     }
-
 }
