@@ -1,8 +1,6 @@
 package chapters.chapter_06;
 
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
-
-public class Exercises_06_24 {
+public class Exercises_06_33 {
     public static void main(String[] args) {
         displayCurrentTimeAndDate();
 
@@ -43,7 +41,6 @@ public class Exercises_06_24 {
         }
         return leapYearCount;
     }
-
     public static int getMonthNumFromDays(int year, int days) {
         int dayCount = 0;
         for (int i = 1; i <= 12; i++) {
@@ -84,25 +81,6 @@ public class Exercises_06_24 {
         }
         return currentDayName;
     }
-    public static int getStartDay(int year, int month) {
-        final int START_DAY_FOR_JAN_1_1800 = 3;
-        int totalNumberOfDays = getTotalNumberOfDays(year,month);
-
-        return (totalNumberOfDays + START_DAY_FOR_JAN_1_1800) % 7;
-    }
-    public static int getTotalNumberOfDays(int year, int month) {
-        int total = 0;
-
-        for (int i = 1800; i < year; i++) {
-            if (Listing_06_12.isLeapYear(i))
-                total += 366;
-            else
-                total += 365;
-        }
-        for (int i = 1; i < month; i++)
-            total += Listing_06_12.getNumberOfDaysInMonth(year, i);
-        return total;
-    }
     public static int getNumberOfDaysTillCurrentMonth(int year, int month) {
         int dayCount = 0;
         for (int i = 1; i < month; i++) {
@@ -111,5 +89,11 @@ public class Exercises_06_24 {
         return dayCount;
 
     }
+    public static int getStartDay(int year, int month) {
+        int startDay = (26 * (month + 1) / 10 + year % 100 + (year % 100) / 4 +
+                (year / 100) / 4 + 5 * (year / 100)) % 7;
+        return startDay;
+    }
+
 
 }
