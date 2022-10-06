@@ -20,7 +20,7 @@ public class checkPoint_07_08 {
 
         int randonIndex = (int)(Math.random() * arr.length);
         System.out.println("The random index is " + randonIndex);
-        System.out.println("The element of random index int the arr is " + arr[randonIndex]);
+        System.out.println("The element of random index in the arr is " + arr[randonIndex]);
 
         double[] arr2 = {3.5, 5.5, 4.52, 5.6};
 

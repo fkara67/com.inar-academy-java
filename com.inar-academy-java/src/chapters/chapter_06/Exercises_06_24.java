@@ -1,7 +1,5 @@
 package chapters.chapter_06;
 
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
-
 public class Exercises_06_24 {
     public static void main(String[] args) {
         displayCurrentTimeAndDate();
