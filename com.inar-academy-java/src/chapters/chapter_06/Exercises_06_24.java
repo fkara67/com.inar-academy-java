@@ -16,7 +16,7 @@ public class Exercises_06_24 {
         long totalDays = totalHours / 24;
 
 
-        int totalYears = (int) (totalDays / 365);
+        int totalYears = (int) (totalDays / 365.25);
         int currentYear = totalYears + 1970;
 
         totalDays = (totalDays - (countOfLeapYearsSince1970(currentYear))) % 365;
