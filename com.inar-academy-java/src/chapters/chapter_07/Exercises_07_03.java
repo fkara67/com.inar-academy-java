@@ -6,17 +6,7 @@ public class Exercises_07_03 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the integers between 1 and 100 (0 ends the input): ");
-        int count = 0;
-        String s = "";
-        do {
-            s += input.next();
-            count++;
-            }while (input.nextInt() != 0);
-        int[] numbers = new int[s.length()];
-        for (int i = 0; i < s.length(); i++) {
-            numbers[i] = Integer.parseInt(s.substring(i,i + 1));
-
-        }
+        int[] numbers = createArrayWithInput();
 
         // Display the array
         System.out.println("The integers are:");
@@ -52,5 +42,15 @@ public class Exercises_07_03 {
                     ((counts[numbers[i]] > 1) ? " times" : " time") + "\n");
 
         }
+    }
+    public static int[] createArrayWithInput(int... numbers) {
+        Scanner input = new Scanner(System.in);
+        do {
+            int element = input.nextInt();
+            for (int i = 0; element != 0; i++) {
+                numbers[i] = input.nextInt();
+            }
+        }while (input.nextInt() != 0);
+        return numbers;
     }
 }
