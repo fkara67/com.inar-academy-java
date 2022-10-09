@@ -4,9 +4,16 @@ import java.util.Scanner;
 
 public class Exercises_07_03 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+
         System.out.print("Enter the integers between 1 and 100 (0 ends the input): ");
-        int[] numbers = createArrayWithInput();
+        Scanner input = new Scanner(System.in);
+        int[] numbers = new int[250];
+        int element = -1;
+        for (int i = 0; element != 0; i++) {
+            element = input.nextInt();
+            numbers[i] = element;
+        }
+
 
         // Display the array
         System.out.println("The integers are:");
@@ -30,27 +37,24 @@ public class Exercises_07_03 {
     }
     public static void displayArray(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
-            if ((i+1) % 10 == 0)
-                System.out.println();
+            if (numbers[i] != 0) {
+                System.out.print(numbers[i] + " ");
+                if ((i + 1) % 10 == 0)
+                    System.out.println();
+            }
 
         }
     }
     public static void displayCounts(int[] counts, int[] numbers) {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " occurs " + counts[numbers[i]] +
-                    ((counts[numbers[i]] > 1) ? " times" : " time") + "\n");
+
+        for (int i = 1; i < counts.length; i++) {
+            if (counts[i] > 0) {
+                System.out.print((i) + " occurs " + counts[i] +
+                        ((counts[i] > 1) ? " times" : " time") + "\n");
+            }
 
         }
     }
-    public static int[] createArrayWithInput(int... numbers) {
-        Scanner input = new Scanner(System.in);
-        do {
-            int element = input.nextInt();
-            for (int i = 0; element != 0; i++) {
-                numbers[i] = input.nextInt();
-            }
-        }while (input.nextInt() != 0);
-        return numbers;
-    }
+
+
 }
