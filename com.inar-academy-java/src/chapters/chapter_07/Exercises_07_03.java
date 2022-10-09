@@ -7,9 +7,11 @@ public class Exercises_07_03 {
 
         System.out.print("Enter the integers between 1 and 100 (0 ends the input): ");
         Scanner input = new Scanner(System.in);
-        int[] numbers = new int[250];
+        final int MAXIMUM_NUMBER_OF_INPUT = 250;
+        int[] numbers = new int[MAXIMUM_NUMBER_OF_INPUT];
         int element = -1;
         for (int i = 0; element != 0; i++) {
+
             element = input.nextInt();
             numbers[i] = element;
         }
