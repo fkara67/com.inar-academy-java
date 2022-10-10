@@ -4,7 +4,7 @@ public class ProcessingArrays {
     public static void main(String[] args) {
         final int LENGTH_OF_ARRAY = 100;
         double[] myList = new double[LENGTH_OF_ARRAY];
-        //initializeArrayWithInput(myList);
+        initializeArrayWithInput(myList);
         initializeArrayWithRandom(myList);
         displayArray(myList);
 

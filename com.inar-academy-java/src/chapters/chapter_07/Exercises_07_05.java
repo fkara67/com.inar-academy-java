@@ -8,33 +8,28 @@ public class Exercises_07_05 {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter ten number: ");
         final int NUMBER_OF_INPUTS = 10;
-        int[] numbers = new int[NUMBER_OF_INPUTS];
-
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = input.nextInt();
-        }
-        int[] distinctNumbers = getTheDistinctNumbers(numbers);
-        int count = getCountOfDistinctNumbers(distinctNumbers);
-
-        System.out.println("The number of distinct numbers is " + count);
-        System.out.println("The distinct numbers are " + Arrays.toString(distinctNumbers));
-    }
-    public static int[] getTheDistinctNumbers(int[] numbers, int...distinctNumbers) {
-        for (int i = 0; i < numbers.length; i++) {
-            if (distinctNumbers[numbers[i]] == 0) {
-                distinctNumbers[numbers[i]] = numbers[i];
-
-            }
-        }
-        return distinctNumbers;
-    }
-    public static int getCountOfDistinctNumbers(int[] distinctNumbers) {
+        int[] distinctNumbers = new int[NUMBER_OF_INPUTS];
         int count = 0;
-        for (int i = 0; i < distinctNumbers.length; i++) {
-            if (distinctNumbers[i] > 0) {
+        for (int i = 0; i < NUMBER_OF_INPUTS; i++) {
+            int user = input.nextInt();
+            if (isDistinct(distinctNumbers,user)) {
+                distinctNumbers[count] = user;
                 count++;
             }
         }
-        return count;
+
+        System.out.println("The number of distinct numbers is " + count);
+        for (int i = 0; distinctNumbers[i] != 0; i++) {
+            System.out.print(distinctNumbers[i] + " ");
+        }
+    }
+
+    public static boolean isDistinct(int[] numbers, int n) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (n == numbers[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
