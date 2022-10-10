@@ -9,20 +9,34 @@ public class Exercises_07_14 {
         int[] numbers = new int[5];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = input.nextInt();
-
-            System.out.println("gcd of number " + numbers[i] + " is " + gcd(numbers));
         }
+        System.out.println("gcd of numbers is " + gcd(numbers));
 
     }
     public static int gcd(int... numbers) {
-        int gcd = 0;
-        int i = 0;
-        for (int j = numbers[i] - 1; j < numbers[i] / 2; j--, i++) {
-            if (numbers[j] % j == 0) {
-                gcd = j;
-                break;
+        int gcd = 1;
+        int min = getMin(numbers);
+
+        for (int i = 2; i <= min; i++) {
+            boolean isGcd = true;
+            for (int k = 0; k < numbers.length; k++) {
+                if (numbers[k] % i != 0) {
+                  isGcd = false;
+                }
             }
+            if (isGcd)
+                gcd = i;
+
         }
         return gcd;
+    }
+    public static int getMin(int[] arr) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
     }
 }
