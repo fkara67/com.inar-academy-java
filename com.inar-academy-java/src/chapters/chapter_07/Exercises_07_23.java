@@ -4,17 +4,18 @@ public class Exercises_07_23 {
     public static void main(String[] args) {
         boolean[] isLocked = new boolean[100];
 
-        for (int i = 0; i < isLocked.length; i++) {
-            for (int j = i; j < isLocked.length; j++) {
-                if (isLocked[i]) {
-                    isLocked[i] = false;
+        for (int student = 1; student <= 100; student++) {
+            for (int door = student - 1; door < isLocked.length; door += student)
+                if (!isLocked[door]) {
+                    isLocked[door] = true;
+                } else {
+                    isLocked[door] = false;
                 }
-                else isLocked[i] = true;
-            }
         }
-        for (int i = 0; i < isLocked.length; i++) {
-            if (isLocked[i]) {
-                System.out.print(i + " ");
+        System.out.println("Open locker numbers are ");
+        for (int door = 0; door < isLocked.length; door++) {
+            if (isLocked[door]) {
+                System.out.print((door + 1) + " ");
             }
         }
     }
