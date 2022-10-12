@@ -5,12 +5,9 @@ import java.util.Scanner;
 
 public class Exercises_07_12 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         System.out.print("Enter ten numbers: ");
-        int[] numbers = new int[10];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = input.nextInt();
-        }
+        int[] numbers = createArrayWiyhInput();
+
         numbers = reverse(numbers);
         System.out.println("The reversed version of numbers is " + Arrays.toString(numbers));
 
@@ -22,5 +19,13 @@ public class Exercises_07_12 {
             array[j] = temp;
         }
         return array;
+    }
+    public static int[] createArrayWiyhInput() {
+        Scanner input = new Scanner(System.in);
+        int[] numbers = new int[10];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = input.nextInt();
+        }
+        return numbers;
     }
 }

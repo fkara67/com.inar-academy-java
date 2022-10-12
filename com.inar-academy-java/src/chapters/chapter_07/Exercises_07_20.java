@@ -5,12 +5,10 @@ import java.util.Scanner;
 
 public class Exercises_07_20 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        final int NUMBER_OF_INPUTS = 10;
         System.out.print("Enter ten numbers: ");
-        double[] numbers = new double[10];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = input.nextDouble();
-        }
+        double[] numbers = createArrayWithInput(NUMBER_OF_INPUTS);
+
         selectionSort(numbers);
         System.out.println(Arrays.toString(numbers));
 
@@ -26,5 +24,13 @@ public class Exercises_07_20 {
             }
 
         }
+    }
+    public static double[] createArrayWithInput(int numberOfInputs) {
+        Scanner input = new Scanner(System.in);
+        double[] numbers = new double[numberOfInputs];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = input.nextDouble();
+        }
+        return numbers;
     }
 }
