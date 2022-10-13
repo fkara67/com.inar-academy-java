@@ -12,19 +12,17 @@ public class Exercises_07_15 {
         displayDistinctNumbers(result);
 
     }
-    public static int[] eliminateDuplicates(int[] arr) {
-        int[] distinctNumbers = new int[arr.length];
+    public static int[] eliminateDuplicates(int[] numbers) {
+        int[] distinctNumbers = new int[numbers.length];
         int countOfDistinct = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (isDistinct(distinctNumbers, arr[i], countOfDistinct)) {
-                distinctNumbers[countOfDistinct] = arr[i];
+        for (int i = 0; i < numbers.length; i++) {
+            if (isDistinct(distinctNumbers, numbers[i], countOfDistinct)) {
+                distinctNumbers[countOfDistinct] = numbers[i];
                 countOfDistinct++;
             }
         }
         int[] result = new int[countOfDistinct];
-        for (int i = 0; i < countOfDistinct; i++) {
-            result[i] = distinctNumbers[i];
-        }
+        System.arraycopy(distinctNumbers, 0, result, 0, countOfDistinct);
 
         return result;
 
@@ -48,8 +46,8 @@ public class Exercises_07_15 {
     }
     public static void displayDistinctNumbers(int[] result) {
         System.out.println("The distinct numbers are ");
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + " ");
+        for (int j : result) {
+            System.out.print(j + " ");
         }
     }
 

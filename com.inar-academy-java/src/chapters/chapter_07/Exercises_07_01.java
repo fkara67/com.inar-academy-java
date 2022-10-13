@@ -10,13 +10,12 @@ public class Exercises_07_01 {
         char[] grades = new char[scores.length];
         
         System.out.print("Enter " + scores.length + " scores: ");
-        for (int i = 0; i < scores.length; i++) {
-            scores[i] = input.nextInt();
-        }
+        getScoreFromUser(scores);
+
         findGrade(scores, grades);
         // displaying results
         for (int i = 0; i < scores.length; i++) {
-            System.out.println("Student " + i + " score is " + scores[i] + " and grade is " + grades[i]);
+            System.out.println("Student " + i + ": score is " + scores[i] + " and grade is " + grades[i]);
 
         }
     }
@@ -42,5 +41,11 @@ public class Exercises_07_01 {
                 best = arr[i];
         }
         return best;
+    }
+    public static void getScoreFromUser(int[] arr) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = input.nextInt();
+        }
     }
 }
