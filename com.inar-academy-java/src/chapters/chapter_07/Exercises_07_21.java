@@ -19,8 +19,51 @@ public class Exercises_07_21 {
         int numberOfSlots = input.nextInt();
 
         int[] slots = new int[numberOfSlots];
-        String[] ballPaths = new String[numberOfSlots];
+        // number of paths will be (number of slots - 1)
+        char[] ballPaths = new char[numberOfSlots - 1];
 
 
+        //Determine and display the paths as many as number of balls
+        for (int i = 0; i < numberOfBalls; i++) {
+            chance(ballPaths,slots);
+            display(ballPaths);
+        }
+        //simulate the state of the balls
+        simulate(slots, numberOfBalls);
+
+
+
+    }
+    public static void chance(char[] ballPaths, int[] slots) {
+        char[] leftOrRight = {'L', 'R'};
+        for (int i = 0; i < ballPaths.length; i++) {
+            int random = (int)(Math.random() * 2);
+            ballPaths[i] = leftOrRight[random];
+        }
+        int countR = 0;
+        for (char c : ballPaths) {
+            if (c == 'R') {
+                countR++;
+            }
+        }
+        slots[countR]++;
+    }
+    public static void display(char[] chars) {
+        for (char c : chars) {
+            System.out.print(c);
+        }
+        System.out.println();
+    }
+    public static void simulate(int[] slots, int numberOfBalls) {
+        for (int i = numberOfBalls; i > 0; i--) {
+            for (int j = 0; j < slots.length; j++) {
+                if (slots[j] == i) {
+                    System.out.print("0");
+                    slots[j]--;
+                }
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
     }
 }
