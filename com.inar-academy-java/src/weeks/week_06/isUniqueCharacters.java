@@ -23,7 +23,7 @@ public class isUniqueCharacters {
     public static boolean isUnique(String s) {
         boolean isUnique;
         s = s.toLowerCase();
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length() - 1; i++) {
             for (int j = i + 1; j < s.length(); j++) {
 
                 if (s.charAt(i) == s.charAt(j)) {
