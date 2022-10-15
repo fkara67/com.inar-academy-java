@@ -1,4 +1,4 @@
-package weeks.week_08;
+package weeks.week_09;
 
 public class findTheSecondMax {
     public static void main(String[] args) {

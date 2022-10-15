@@ -1,6 +1,5 @@
-package weeks.week_06;
+package weeks.week_07;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class isUniqueCharacters {

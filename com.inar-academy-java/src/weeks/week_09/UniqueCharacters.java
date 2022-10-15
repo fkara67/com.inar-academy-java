@@ -1,4 +1,4 @@
-package weeks.week_08;
+package weeks.week_09;
 
 import java.util.Scanner;
 //Inar Academy => false
