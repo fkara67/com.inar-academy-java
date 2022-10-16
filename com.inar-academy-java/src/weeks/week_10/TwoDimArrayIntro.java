@@ -10,22 +10,23 @@ public class TwoDimArrayIntro {
         System.out.print("Enter the number of columns: ");
         int numberOfColumn = input.nextInt();
         int[][] arr = new int[numberOfRow][numberOfColumn];
-        fill2DimArrWithRandomValues(arr,0,10);
+        fill2DimArrWithRandomValues(arr,1,1000);
         display2DimArr(arr,numberOfColumn);
 
     }
     public static void fill2DimArrWithRandomValues(int[][]arr, int start, int limit) {
         for (int row = 0; row < arr.length; row++) {
             for (int col = 0; col < arr[row].length; col++) {
-                arr[row][col] = (int)(Math.random() * limit) + start;
+                arr[row][col] = (int)(Math.random() * (limit - start)) + start;
             }
         }
     }
     public static void display2DimArr(int[][] arr,int numberOfCol) {
         for (int row = 0; row < arr.length; row++) {
             for (int col = 0; col < arr[row].length; col++) {
-                System.out.print(arr[row][col] + (((col + 1) % numberOfCol == 0) ? "\n" : "  "));
+                System.out.printf("%5d",arr[row][col]);
             }
+            System.out.println();
         }
     }
 }
