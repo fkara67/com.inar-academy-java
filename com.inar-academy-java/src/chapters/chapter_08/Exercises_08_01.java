@@ -3,7 +3,7 @@ package chapters.chapter_08;
 import java.util.Scanner;
 
 public class Exercises_08_01 {
-    /* 1- promt the user to enter 3-by-4 matrix
+    /* 1- prompt the user to enter 3-by-4 matrix
        2- read and initialize input a two-dimensional array
        3- display the sum of each column
        4- write sumColumn method

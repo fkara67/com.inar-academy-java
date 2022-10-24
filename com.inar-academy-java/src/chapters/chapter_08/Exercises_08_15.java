@@ -1,0 +1,33 @@
+package chapters.chapter_08;
+
+import java.util.Scanner;
+
+public class Exercises_08_15 {
+    /* 1- prompt the user to enter 5 points(x and y)
+       2- attend the points into a two-dim arr
+       3- test whether all the points in the arr are on the same line with a method.
+       4- display the result
+     */
+    public static void main(String[] args) {
+        double[][] points = new double[5][2];
+        System.out.print("Enter five points(x, y): ");
+        fillArrWithInput(points);
+        System.out.println("The five points are " + (sameLine(points) ? "" : "not ") + "on the same line.");
+    }
+    public static void fillArrWithInput(double[][] points) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < points.length; i++) {
+            points[i][0] = input.nextDouble();
+            points[i][1] = input.nextDouble();
+        }
+    }
+    public static boolean sameLine(double[][] points) {
+        for (int i = 2; i < points.length; i++) {
+            if (!((points[1][0] - points[0][0]) * (points[i][1] - points[0][1]) -
+                    (points[i][0] - points[0][0]) * (points[1][1] - points[0][1]) == 0)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
