@@ -22,9 +22,14 @@ public class Exercises_08_15 {
         }
     }
     public static boolean sameLine(double[][] points) {
+        double x0 = points[0][0];
+        double y0 = points[0][1];
+        double x1 = points[1][0];
+        double y1 = points[1][1];
+
         for (int i = 2; i < points.length; i++) {
-            if (!((points[1][0] - points[0][0]) * (points[i][1] - points[0][1]) -
-                    (points[i][0] - points[0][0]) * (points[1][1] - points[0][1]) == 0)) {
+            if (!((x1 - x0) * (points[i][1] - y0) -
+                    (points[i][0] - x0) * (y1 - y0) == 0)) {
                 return false;
             }
         }
