@@ -15,7 +15,7 @@ public class Exercises_08_28 {
         Exercises_08_16.fillArray(arr2,input);
 
 
-        System.out.println("\nThe arr1 and arr2 is " +
+        System.out.println("\nThe arr1 and arr2 are " +
                 ((equals(arr1, arr2)) ? " strictly equals" : " not strictly equals"));
 
     }

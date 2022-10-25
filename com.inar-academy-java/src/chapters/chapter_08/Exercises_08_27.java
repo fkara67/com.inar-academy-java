@@ -12,7 +12,7 @@ public class Exercises_08_27 {
         System.out.println("The input array is ");
         printArray(matrix);
 
-        double[][] columnSortedArray = sortJustInRows(matrix);
+        double[][] columnSortedArray = sortJustInColumns(matrix);
 
         System.out.println("\nThe row-sorted array is ");
         printArray(columnSortedArray);
@@ -31,7 +31,7 @@ public class Exercises_08_27 {
             System.out.println();
         }
     }
-    public static double[][] sortJustInRows(double[][] arr) {
+    public static double[][] sortJustInColumns(double[][] arr) {
         double[][] result = new double[arr.length][arr[0].length];
         System.arraycopy(arr,0,result,0,arr.length);
 
