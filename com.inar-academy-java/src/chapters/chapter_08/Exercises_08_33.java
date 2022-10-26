@@ -1,6 +1,7 @@
 package chapters.chapter_08;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Exercises_08_33 {
     /* Geometry: polygon subareas
@@ -12,10 +13,9 @@ public class Exercises_08_33 {
     public static void main(String[] args) {
         System.out.print("Enter x1, y1, x2, y2, x3, y3, x4, y4: ");
         double[][] vertices = new double[4][2];
-        double[][] intSec = {vertices[0], vertices[2],vertices[1],vertices[3]};
-        Exercises_08_31.fillArrayWithInput(vertices);
-        double[] intSecPoint = Exercises_08_31.getIntersectingPoint(intSec);
-        System.out.println(Arrays.toString(intSecPoint));
+        double[][] intSecFindingPoints = {vertices[0], vertices[2],vertices[1],vertices[3]};
+        fillArrayWithInput(vertices);
+        double[] intSecPoint = Exercises_08_31.getIntersectingPoint(intSecFindingPoints);
         double[] areas = new double[4];
         double[][][] points = {
                 {vertices[0],vertices[1],intSecPoint},
@@ -28,6 +28,13 @@ public class Exercises_08_33 {
         }
         sort(areas);
         display(areas);
+    }
+    public static void fillArrayWithInput(double[][] arr) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i][0] = input.nextDouble();
+            arr[i][1] = input.nextDouble();
+        }
     }
     public static void sort(double[] areas) {
         for (int i = 0; i < areas.length - 1; i++) {
@@ -43,7 +50,7 @@ public class Exercises_08_33 {
     public static void display(double[] areas) {
         System.out.print("The areas are ");
         for (int i = 0; i < areas.length; i++) {
-            System.out.printf("%5.2f",areas[i]);
+            System.out.printf("%.2f ",areas[i]);
         }
     }
 
