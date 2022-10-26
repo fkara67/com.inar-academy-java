@@ -43,7 +43,7 @@ public class Exercises_08_20 {
 
     private static boolean sameRow() {
         int num = isRedTurn ? 1 : 2;
-        int counter = 0;
+        int counter;
 
         for (int i = 0; i < row; i++) {
             counter = 0;
@@ -63,7 +63,7 @@ public class Exercises_08_20 {
     }
     private static boolean sameCol() {
         int num = isRedTurn ? 1 : 2;
-        int counter = 0;
+        int counter;
 
         for (int i = 0; i < col; i++) {
             counter = 0;
@@ -147,7 +147,7 @@ public class Exercises_08_20 {
     private static void display1() {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                char c = ' ';
+
                 System.out.print("| ");
                 if (board[i][j] == 1) {
                     System.out.print(ANSI_RED + "R" + ANSI_RESET);
@@ -189,6 +189,4 @@ public class Exercises_08_20 {
         String color = isRedTurn ? "Red" : "Yellow";
         System.out.printf("Drop a %s disk at column (0–6):", color);
     }
-
-
 }
