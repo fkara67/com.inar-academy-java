@@ -12,10 +12,11 @@ public class Exercises_08_16 {
         int[][] array = new int[row][column];
         System.out.println("Enter the array: ");
         fillArray(array,input);
-        System.out.println("Before the sort \n");
+        System.out.println("Before the sort ");
         print(array);
+        System.out.println();
         sort(array);
-        System.out.println("\nAfter the sort \n");
+        System.out.println("\nAfter the sort ");
         print(array);
     }
     public static void fillArray(int[][] array, Scanner input) {
@@ -49,12 +50,12 @@ public class Exercises_08_16 {
                     index = i;
                 }
             }
-            if (index != row) {
-                array[index][0] = array[row][0];
-                array[index][1] = array[row][1];
-                array[row][0] = min0;
-                array[row][1] = min1;
-            }
+
+            array[index][0] = array[row][0];
+            array[index][1] = array[row][1];
+            array[row][0] = min0;
+            array[row][1] = min1;
+
         }
     }
 }

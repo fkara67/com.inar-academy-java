@@ -51,6 +51,6 @@ public class Exercises_08_23 {
         }
         return indexOfCell;
     }
-    
+
     
 }
