@@ -1,5 +1,6 @@
 package chapters.chapter_08;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercises_08_09 {
@@ -9,158 +10,129 @@ public class Exercises_08_09 {
      */
     public static void main(String[] args) {
         char[][] grid = new char[3][3];
-        char[] tokens = {'X', 'O'};
+        fill(grid, ' ');
+        boolean xTurn = true;
+        boolean isDraw = true;
 
-        while (!isDraw(grid)) {
-            xTurn(grid);
+        while (!isFull(grid)) {
             printGameBox(grid);
-            oTurn(grid);
-            printGameBox(grid);
-
+            promptTheUser(grid, xTurn);
+            if (checkWins(grid)) {
+                printGameBox(grid);
+                System.out.println((xTurn ? "X" : "O") + " player won");
+                isDraw = false;
+                break;
             }
-        result(grid,tokens);
+            xTurn = !xTurn;
         }
+        if (isDraw) {
+            System.out.println("Game over! It's a Draw!");
+        }
+    }
 
+    private static void fill(char[][] grid, char c) {
+        for (int i = 0; i < grid.length; i++) {
+            Arrays.fill(grid[i], c);
+        }
+    }
 
-    public static void xTurn(char[][] grid) {
+    public static boolean isFull(char[][] grid) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                if (grid[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public static void promptTheUser(char[][] grid, boolean xTurn) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter a row (0, 1, or 2) for player X:");
-        int row = input.nextInt();
-        System.out.print("Enter a column (0, 1, or 2) for player X:");
-        int col = input.nextInt();
-        if (grid[row][col] != '\u0000') {
-            System.out.println("This position occupied!");
-            xTurn(grid);
-        } else
-            grid[row][col] = 'X';
 
+        while (true) {
+            System.out.print("Enter a row (0, 1, 2) for player ");
+            System.out.print(xTurn ? "X: " : "O: ");
+            int row = input.nextInt();
+
+            System.out.print("Enter a col (0, 1, 2) for player ");
+            System.out.print(xTurn ? "X: " : "O: ");
+            int col = input.nextInt();
+
+            if (col < 0 || col > 2 || row < 0 || row > 2) {
+                System.out.println("Please choose another row and col!");
+                continue;
+            }
+
+            if (grid[row][col] == ' ') {
+                grid[row][col] = xTurn ? 'X' : 'O';
+                break;
+            }
+            System.out.println("Please choose another row and col!");
+        }
+    }
+    public static boolean checkWins(char[][] grid) {
+        return checkRows(grid) || checkCols(grid) || checkMajorDiagonal(grid) || checkSubDiagonal(grid);
     }
 
-    public static void oTurn(char[][] grid) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a row (0, 1, or 2) for player O:");
-        int row = input.nextInt();
-        System.out.print("Enter a column (0, 1, or 2) for player O:");
-        int col = input.nextInt();
-        if (grid[row][col] != '\u0000') {
-            System.out.println("This position occupied!");
-            oTurn(grid);
-        } else
-            grid[row][col] = 'O';
+    private static boolean checkSubDiagonal(char[][] grid) {
+        for (int row = 0, col = grid.length - 1; row < grid.length - 1; row++, col--) {
+            if (grid[row][col] == ' ' || grid[row][col] != grid[row + 1][col - 1]) {
+                return false;
+            }
+        }
+        return true;
     }
-    public static boolean isWinXRow(char[][] grid, char[] tokens) {
-        for (int i = 0; i < grid.length; i++) {
-            int countX = 0;
-            for (int j = 1; j < grid[i].length; j++) {
-                if (grid[i][j] == tokens[0]) {
-                    countX++;
+
+    private static boolean checkMajorDiagonal(char[][] grid) {
+        for (int i = 0; i < grid.length - 1; i++) {
+            if (grid[i][i] == ' ' || grid[i][i] != grid[i + 1][i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean checkCols(char[][] grid) {
+        boolean isOver;
+
+        for (int col = 0; col < grid.length; col++) {
+            isOver = true;
+            for (int row = 0; row < grid.length - 1; row++) {
+                if (grid[0][col] == ' ' || grid[row][col] != grid[row + 1][col]) {
+                    isOver = false;
                 }
             }
-            if (countX == 3)
+            if (isOver) {
                 return true;
+            }
         }
         return false;
     }
-    public static boolean isWinXCol(char[][] grid, char[] tokens) {
-        for (int col = 0; col < grid[0].length; col++) {
-            int count = 0;
-            for (int row = 1; row < grid.length; row++) {
-                if (grid[row][col] == tokens[0]) {
-                    count++;
+    public static boolean checkRows(char[][] grid) {
+        boolean isOver;
+
+        for (int row = 0; row < grid.length; row++) {
+            isOver = true;
+            for (int col = 0; col < grid[row].length - 1; col++) {
+                if (grid[row][0] == ' ' || grid[row][col] != grid[row][col + 1]) {
+                    isOver = false;
                 }
             }
-            if (count == 3)
+            if (isOver) {
                 return true;
-        }
-        return false;
-    }
-    public static boolean isWinXDiagonal(char[][] grid, char[] tokens) {
-        int count = 0;
-        for (int i = 0; i < grid.length; i++) {
-            if (grid[i][i] != tokens[0]) {
-                count++;
             }
         }
-        if (count == 3)
-            return true;
-
         return false;
-    }
-    public static boolean isWinORow(char[][] grid, char[] tokens) {
-        for (int i = 0; i < grid.length; i++) {
-            int countO = 0;
-            for (int j = 1; j < grid[i].length; j++) {
-                if (grid[i][j] == tokens[0]) {
-                    countO++;
-                }
-            }
-            if (countO == 3)
-                return true;
-        }
-        return false;
-    }
-    public static boolean isWinOCol(char[][] grid, char[] tokens) {
-        for (int col = 0; col < grid[0].length; col++) {
-            int count = 0;
-            for (int row = 1; row < grid.length; row++) {
-                if (grid[row][col] == tokens[1]) {
-                    count++;
-                }
-            }
-            if (count == 3)
-                return true;
-        }
-        return false;
-    }
-    public static boolean isWinODiagonal(char[][] grid, char[] tokens) {
-        int count = 0;
-        for (int i = 0; i < grid.length; i++) {
-            if (grid[i][i] != tokens[1]) {
-                count++;
-            }
-        }
-        if (count == 3)
-            return true;
-
-        return false;
-    }
-
-
-    public static void result(char[][] grid, char[] tokens) {
-        if (isWinXRow(grid,tokens) || isWinXCol(grid,tokens) || isWinXDiagonal(grid,tokens)) {
-            System.out.println(tokens[0] + " player won");
-        }
-        if (isWinORow(grid,tokens) || isWinOCol(grid,tokens) || isWinODiagonal(grid,tokens)) {
-            System.out.println(tokens[1] + " player won");
-        }
-        if (isDraw(grid)) {
-            System.out.println("It is a draw");
-        }
     }
     public static void printGameBox(char[][] grid) {
         System.out.println("_____________");
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] != '\u0000') {
-                    System.out.print("| " + grid[i][j] + " ");
-                } else
-                    System.out.print("|   ");
+                System.out.print("| " + grid[i][j] + " ");
             }
             System.out.print("|");
             System.out.println("\n-------------");
         }
-    }
-
-
-
-    public static boolean isDraw(char[][] grid) {
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] == '\u0000')
-                    return false;
-            }
-        }
-        return true;
     }
 }
 
