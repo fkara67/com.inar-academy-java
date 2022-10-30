@@ -1,7 +1,5 @@
 package weeks.week_12;
 
-import java.util.Arrays;
-
 public class SplitInterviewQuestion {
     /**
      * Code review - Peer review
@@ -9,13 +7,27 @@ public class SplitInterviewQuestion {
      */
 
     public static void main(String[] args) {
-        String s1 = "Tarik: I am java an instructor java at Inar Academy javajava";
-        String[] arr = s1.split("java");
-        System.out.println(Arrays.toString(arr));
-        System.out.println(arr.length);
-        System.out.println(s1.substring(s1.length() - 4));
-        System.out.println("the count of java is " +
-                ((s1.substring(s1.length() - 4)).equals("java") ? arr.length : arr.length - 1));
+        findJavaInCV();
+        deneme();
 
+    }
+    public static void deneme() {
+        String s1 = " Tarik: I am java an instructor java at Inar Academy java";
+        String[] arr = s1.split(" ");
+        display(arr);
+        System.out.println(arr.length);
+    }
+    public static void findJavaInCV() {
+        String cv = "Fatih\n I have been studying at Inar Academy for about 3 months." +
+                "I am learning Java for my career. I am good at Java";
+        String[] arr = cv.trim().split("Java");
+        display(arr);
+        int count = arr.length;
+        System.out.println(count);
+    }
+    public static void display(String[] arr) {
+        for (String s : arr) {
+            System.out.println(s);
+        }
     }
 }

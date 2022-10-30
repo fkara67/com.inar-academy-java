@@ -1,43 +1,63 @@
 package weeks.week_12;
 
 public class Student {
-    String name;
-    String surname;
-    int id;
-    String eMail;
+    private static int studentCounter;
+    private String name;
+    private String surname;
+    private int id;
+    private String eMail;
+    public final static String ACADEMY = "Inar Academy";
+
+    public String publicAccessModifier;
+    String defaultAccessModifier;//package private - default
+    private String privateAccessModifier;
+    protected String protectedAccessModifier;
+
 
     public Student() {
-        this.name = "";
-        this.surname = "";
+        this("", "", 0, "");
+        // this.name = "";
+        // this.surname = "";
     }
-    public Student(String name1, String surname1, int id1, String eMail1) {
-        name = name1;
-        surname = surname1;
-        id = id1;
-        eMail = eMail1;
+    public Student(String name, String surname, int id, String eMail) {
+        this.name = name;
+        this.surname = surname;
+        this.id = id;
+        this.eMail = eMail;
+        studentCounter++;
     }
     public String getName() {
-        return name;
+        return this.name;
     }
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
     public int getId() {
-        return id;
+        return this.id;
     }
-    public String geteMail() {
-        return eMail;
+    public String getEmail() {
+        return this.eMail;
     }
-    public void setName(String newName) {
-        name = newName;
+    public void setName(String name) {
+        this.name = name;
     }
-    public void setSurname(String newSurname) {
-        surname = newSurname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
-    public void setId(int newId) {
-        id = newId;
+    public void setId(int id) {
+        this.id = id;
     }
-    public void seteMail(String newEmail) {
-        eMail = newEmail;
+    public void setEmail(String eMail) {
+        this.eMail = eMail;
+    }
+    public void print() {
+        System.out.printf("Name:%s\nSurname:%s\nId:%s\nEmail:%s\n", this.name, this.surname, this.id, this.eMail);
+        System.out.println("--------------------");
+    }
+    public static void printDataFields() {
+        System.out.println("Name - Surname - Id - Email");
+    }
+    public static int getStudentCounter() {
+        return studentCounter;
     }
 }
