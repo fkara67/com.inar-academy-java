@@ -3,7 +3,6 @@ package weeks.week_12;
 public class SplitInterviewQuestion {
     /**
      * Code review - Peer review
-     * @paran args
      */
 
     public static void main(String[] args) {
