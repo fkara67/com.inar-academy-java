@@ -23,10 +23,10 @@ public class TestStudent {
         System.out.println("Id of Murat: " + idOfMurat);
         System.out.println("Email of Murat: " + murat.getEmail());
 
-        System.out.println("Student Number: " + Student.getStudentCounter());
+        System.out.println("Student Number: " + Student.getStudentCount());
 
         Student nurullah = new Student("Nurullah", "Inar", 5276, "nurullah@inar.com");
-        System.out.println("Student Number: " + Student.getStudentCounter());
+        System.out.println("Student Number: " + Student.getStudentCount());
 
         Student tarik = new Student();
         System.out.println(tarik.defaultAccessModifier);

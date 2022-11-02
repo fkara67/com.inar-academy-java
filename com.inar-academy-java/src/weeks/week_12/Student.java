@@ -57,7 +57,7 @@ public class Student {
     public static void printDataFields() {
         System.out.println("Name - Surname - Id - Email");
     }
-    public static int getStudentCounter() {
+    public static int getStudentCount() {
         return studentCounter;
     }
 }
