@@ -18,56 +18,60 @@ package chapters.chapter_09.Exercises.Exercises_09_08;
    along with the string “fan is off” in one combined string.
   */
 public class Fan {
-    final static int SLOW = 1;
-    final static int MEDIUM = 2;
-    final static int FAST = 3;
-    private int speed = SLOW;
-    private boolean on = false;
-    private double radius = 5;
-    public String color = "blue";
+    public static final int SLOW = 1;
+    public static final int MEDIUM = 2;
+    public  static final int FAST = 3;
+    private int speed;
+    private boolean on;
+    private double radius;
+    public String color;
 
     public Fan() {
+        speed = SLOW;
+        on = false;
+        radius = 5;
+        color = "blue";
     }
 
     public int getSpeed() {
-        return this.speed;
+        return speed;
     }
     public void setSpeed(int speed) {
-        this.speed = speed;
+        if (speed > FAST || speed < SLOW) {
+            this.speed = speed;
+        }
     }
     public boolean isOn() {
-        return this.on;
+        return on;
     }
     public void turnOn() {
-        this.on = true;
+        on = true;
     }
     public void turnOff() {
-        this.on = false;
+        on = false;
     }
     public double getRadius() {
-        return this.radius;
+        return radius;
     }
     public void setRadius(double radius) {
         this.radius = radius;
     }
     public String getColor() {
-        return this.color;
+        return color;
     }
     public void setColor(String color) {
         this.color = color;
     }
 
     public String toString() {
-        String result = "";
         //returns the fan speed, color, and radius in one combined string.
         if (isOn()) {
-           result += "Fan Speed: " + getSpeed() + "\nFun Color: " + getColor() + "\nFan Radius: " + getRadius();
+           return "Fan Speed: " + getSpeed() + "\nFun Color: " + getColor() + "\nFan Radius: " + getRadius();
         }
         //returns the fan color and radius
         //along with the string “fan is off” in one combined string.
         else {
-            result += "Fan is off" + "\nFun Color: " + getColor() + "\nFan Radius: " + getRadius();
+            return  "Fan is off" + "\nFun Color: " + getColor() + "\nFan Radius: " + getRadius();
         }
-        return result;
     }
 }

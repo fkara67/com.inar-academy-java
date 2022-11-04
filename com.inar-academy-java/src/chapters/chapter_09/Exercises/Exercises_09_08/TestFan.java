@@ -18,8 +18,8 @@ public class TestFan {
          f2.setColor("blue");
          f2.turnOff();
 
-         System.out.println(f1.toString());
+         System.out.println("f1: \n" + f1.toString());
          System.out.println("------------------");
-         System.out.println(f2.toString());
+         System.out.println("f2: \n" + f2.toString());
      }
 }

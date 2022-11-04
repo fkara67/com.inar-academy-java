@@ -5,10 +5,11 @@ import java.util.Date;
 public class Account {
     private int id;
     private double balance;
-    private double  annualInterestRate = 0;
+    private double annualInterestRate;
     private Date dateCreated = new Date();
 
     public Account() {
+        annualInterestRate = 0;
 
     }
     // constructor that creates an account with the specified id and initial balance
