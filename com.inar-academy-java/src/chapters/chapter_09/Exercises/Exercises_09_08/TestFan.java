@@ -13,13 +13,14 @@ public class TestFan {
          f1.turnOn();
 
          Fan f2 = new Fan();
+
          f2.setSpeed(Fan.MEDIUM);
          f2.setRadius(5);
          f2.setColor("blue");
          f2.turnOff();
 
-         System.out.println("f1: \n" + f1.toString());
+         System.out.println("f1: \n" + f1);
          System.out.println("------------------");
-         System.out.println("f2: \n" + f2.toString());
+         System.out.println("f2: \n" + f2);
      }
 }

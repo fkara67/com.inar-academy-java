@@ -37,7 +37,7 @@ public class Fan {
         return speed;
     }
     public void setSpeed(int speed) {
-        if (speed > FAST || speed < SLOW) {
+        if (speed <= FAST && speed >= SLOW) {
             this.speed = speed;
         }
     }
