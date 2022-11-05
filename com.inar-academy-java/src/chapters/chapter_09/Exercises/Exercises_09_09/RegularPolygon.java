@@ -13,7 +13,7 @@ public class RegularPolygon {
 
      // regular polygon with default values.
      public RegularPolygon() {
-         this(3, 1, 0 , 0);
+         this(3, 1);
      }
      // with the specified number of sides and length of side, centered at (0, 0).
      public RegularPolygon(int n, double side) {
@@ -26,7 +26,15 @@ public class RegularPolygon {
          this.x = x;
          this.y = y;
      }
-     //The accessor and mutator methods for all data fields.
+
+    public double getPerimeter() {
+        return n * side;
+    }
+    public double getArea() {
+        return (n * side * side) / (4 * Math.tan(Math.PI / n));
+    }
+
+    //The accessor and mutator(getter, setter) methods
      public int getN() {
          return n;
      }
@@ -51,10 +59,5 @@ public class RegularPolygon {
      public void setY(double y) {
          this.y = y;
      }
-     public double getPerimeter() {
-         return n * side;
-     }
-     public double getArea() {
-         return (n * side * side) / (4 * Math.tan(Math.PI / n));
-     }
+
 }
