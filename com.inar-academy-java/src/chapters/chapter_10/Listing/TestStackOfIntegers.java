@@ -11,11 +11,15 @@ public class TestStackOfIntegers {
             System.out.print(stack.peek() + " ");
         }
         System.out.println();
-        System.out.print(stack.pop() + " ");
+        System.out.println(stack.pop() + " ");
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
+
 
         System.out.println();
 
-        while (!stack.isEmpty()) {
+        while (stack.isEmpty()) {
             System.out.print(stack.pop() + " ");
         }
 

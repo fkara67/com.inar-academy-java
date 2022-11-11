@@ -34,7 +34,7 @@ public class StackOfIntegers {
 
     /** Test whether the stack is empty */
     public boolean isEmpty() {
-        return (size == 0);
+        return (size != 0);
     }
 
     /** Return the number of elements in the stack */

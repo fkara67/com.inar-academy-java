@@ -28,7 +28,7 @@ public class primeNumbers {
     }
     public static void display(StackOfIntegers stack) {
         int count = 0;
-        while (!stack.isEmpty()) {
+        while (stack.isEmpty()) {
             System.out.print(stack.pop() + " ");
             count++;
             if (count % 10 == 0) {

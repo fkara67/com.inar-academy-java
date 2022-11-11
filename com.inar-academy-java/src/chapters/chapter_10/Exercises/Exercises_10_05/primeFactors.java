@@ -22,7 +22,7 @@ public class primeFactors {
         display(stack);
     }
     public static void display(StackOfIntegers stack) {
-        while (!stack.isEmpty()) {
+        while (stack.isEmpty()) {
             System.out.print(stack.pop() + " ");
         }
     }

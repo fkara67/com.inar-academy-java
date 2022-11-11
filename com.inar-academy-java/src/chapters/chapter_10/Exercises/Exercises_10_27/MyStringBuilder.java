@@ -20,4 +20,15 @@ public class MyStringBuilder {
     public char charAt(int index) {
         return s.charAt(index);
     }
+    public MyStringBuilder toLowerCase() {
+        s = s.toLowerCase();
+        return this;
+    }
+    public MyStringBuilder substring(int begin, int end) {
+        s = s.substring(begin, end);
+        return this;
+    }
+    public String toString() {
+        return s;
+    }
 }
