@@ -21,6 +21,18 @@ public class MyRectangle2D {
     public double getPerimeter() {
         return 2 * (height + width);
     }
+    public boolean contains(double x, double y) {
+        return (Math.abs(this.x - x) <= width / 2 && Math.abs(this.y - y) <= height / 2);
+    }
+    public boolean contains(MyRectangle2D rectangle) {
+        return (Math.abs(x - rectangle.getX()) <= width / 2 - rectangle.getWidth() / 2 &&
+                Math.abs(y - rectangle.getY()) <= height / 2 - rectangle.getHeight() / 2);
+    }
+    public boolean overlaps(MyRectangle2D rectangle) {
+        return ((Math.abs(y - rectangle.getY()) <= height / 2 + rectangle.getHeight() / 2 ||
+                Math.abs(x - rectangle.getX()) <= width / 2 + rectangle.getWidth() / 2) &&
+                !contains(rectangle));
+    }
 
     public double getX() {
         return x;
