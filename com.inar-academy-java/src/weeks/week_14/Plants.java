@@ -22,6 +22,10 @@ public class Plants {
     public void hasBeenSow() {
         System.out.println("This plant has been sow.");
     }
+    public String toString() {
+        return String.format("Name: %s\nHasLeaves: %s\nIsEatable: %s\nColor: %s",
+                name, hasLeaves, eatable, color);
+    }
 
     public String getName() {
         return name;

@@ -1,10 +1,10 @@
 package weeks.week_14;
 
 public class Animal {
-    private double length;
-    private double weight;
-    private boolean hasSwimmingSkills;
-    private boolean hasFlyingSkills;
+    protected double length;
+    protected double weight;
+    protected boolean canSwim;
+    protected boolean canFly;
 
     public Animal() {
         this(0,0,false,false);
@@ -12,14 +12,22 @@ public class Animal {
     public Animal(double length, double weight, boolean canSwim, boolean canFly) {
         this.length = length;
         this.weight = weight;
-        this.hasSwimmingSkills = canSwim;
-        this.hasFlyingSkills = canFly;
+        this.canSwim = canSwim;
+        this.canFly = canFly;
+    }
+    final public void animalMethod() {
+        System.out.println("This is the final method from animal class.");
+    }
+    @Override
+    public String toString() {
+        return String.format("Weight: %s\nLength: %s\nHasFlyingSkill: %s\nHasSwimmingSkill: %s\n",
+                            weight, length, canFly, canSwim);
+    }
+    public void runs() {
+        System.out.println("Animal is running.");
     }
     public void eats() {
-
-    }
-    public void sleeps() {
-
+        System.out.println("Animal is eating.");
     }
 
     public double getLength() {
@@ -38,19 +46,19 @@ public class Animal {
         this.weight = weight;
     }
 
-    public boolean isHasSwimmingSkills() {
-        return hasFlyingSkills;
+    public boolean getCanSwim() {
+        return canSwim;
     }
 
-    public void setHasSwimmingSkills(boolean hasSwimmingSkills) {
-        this.hasSwimmingSkills = hasSwimmingSkills;
+    public void setCanSwim(boolean canSwim) {
+        this.canSwim = canSwim;
     }
 
-    public boolean isHasFlyingSkills() {
-        return hasFlyingSkills;
+    public boolean getCanFly() {
+        return canFly;
     }
 
-    public void setHasFlyingSkills(boolean hasFlyingSkills) {
-        this.hasFlyingSkills = hasFlyingSkills;
+    public void setCanFly(boolean canFly) {
+        this.canFly = canFly;
     }
 }

@@ -24,8 +24,7 @@ public class Fruit extends Plants {
     }
     @Override
     public String toString() {
-        String s = "This fruit is " + (isJuicy() ? "" : "not") + "juice";
-        return s;
+        return "This fruit is " + (isJuicy() ? "" : "not ") + "juicy";
     }
 
     public boolean isHasSeed() {
