@@ -33,7 +33,7 @@ public class MyString2 {
         char[] ch = new char[chars.length];
 
         for (int i = 0; i < ch.length; i++) {
-            if (chars[i] < 'z' && chars[i] > 'a') {
+            if (chars[i] <= 'z' && chars[i] >= 'a') {
                 ch[i] = (char) (chars[i] - ('a' - 'A'));
             }
             else
@@ -46,5 +46,9 @@ public class MyString2 {
     }
     public static MyString2 valueOf(boolean b) {
         return new MyString2(b ? "true" : "false");
+    }
+    public String toString() {
+        return s;
+
     }
 }
