@@ -1,6 +1,5 @@
 package chapters.chapter_08;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class Exercises_08_37 {

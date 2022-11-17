@@ -1,7 +1,5 @@
 package chapters.chapter_06;
 
-import java.util.Scanner;
-
 public class Exercises_06_30 {
     public static void main(String[] args) {
         playCrasp();
@@ -25,7 +23,7 @@ public class Exercises_06_30 {
     }
     public static void rollTillWinOrLose(int sum) {
 
-        while (sum != 7 || sum != sum) {
+        while (sum != 7) {
             int dice1 = rollDice();
             int dice2 = rollDice();
             System.out.println("You rolled " + dice1 + " + " + dice2 + " = " + (dice1 + dice2));

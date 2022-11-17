@@ -1,7 +1,5 @@
 package chapters.chapter_05;
 
-import org.omg.Messaging.SyncScopeHelper;
-
 import java.util.Scanner;
 
 public class Exercises_05_02 {

@@ -1,7 +1,5 @@
 package chapters.chapter_09.Exercises.Exercises_09_06;
 
-import java.util.Date;
-
 public class Stopwatch {
     private long startTime;
     private long endTime;

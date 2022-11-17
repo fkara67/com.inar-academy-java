@@ -1,7 +1,5 @@
 package chapters.chapter_08;
 
-import java.util.Random;
-
 public class Exercises_08_18 {
     public static void main(String[] args) {
         int[][] m = {{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}};
