@@ -1,9 +1,5 @@
 package chapters.chapter_10.Exercises.Exercises_10_22;
-
-
-
 public class MyString1 {
-
     private char[] chars;
 
     public MyString1(char[] chars) {

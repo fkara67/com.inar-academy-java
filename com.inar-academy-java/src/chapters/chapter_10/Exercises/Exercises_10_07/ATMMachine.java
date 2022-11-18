@@ -39,7 +39,6 @@ public class ATMMachine {
                 }
             }
         }
-
     }
     public static void displayMainMenu() {
         System.out.println("");
