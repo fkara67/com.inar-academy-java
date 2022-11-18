@@ -16,8 +16,8 @@ public class TestMyStack {
         System.out.println("stack size: " + stack.size());
         System.out.println(stack);
 
-        stack.add(3, "Okul"); //bu methodu stack yapisinda kullanmamiz beklenmiyor
-                                           // ama miras yoluyla bize ArrayList kaliyor
+        //stack.add(3, "Okul");       //bu methodu stack yapisinda kullanmamiz beklenmiyor
+                                      // ama miras yoluyla bize ArrayList kaliyor
 
         while (!stack.isEmpty()) {
             System.out.print(stack.pop() + " ");
