@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TestCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter the calculation you want to do:\n(Please take space with operands and operator)");
+        System.out.print("Enter the calculation you want to do:\n(Please take space with operands and operator) ");
 
         Number number1 = new Number(input.nextDouble());
         String sign = input.next();
