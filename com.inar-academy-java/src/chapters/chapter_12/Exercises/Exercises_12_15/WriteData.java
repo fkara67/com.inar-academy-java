@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 
 public class WriteData {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("Exercise12_21.txt");
+        File file = new File("babyNameRanking2002.txt");
 
         if (file.exists()) {
             System.out.println("File already exists!");
