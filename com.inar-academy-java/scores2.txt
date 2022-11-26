@@ -1,2 +1,2 @@
-T Smith 90
-Eric K Jones 85
+John T Smith 90
+Eric K Canan 85
