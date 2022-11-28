@@ -64,7 +64,7 @@ public class SearchWeb {
 
     public static boolean lookFor(String word, String urlString) {
         try (
-                Scanner input = new Scanner(urlString);
+                Scanner input = new Scanner(urlString)
         ) {
             while (input.hasNext()) {
                 String s = input.nextLine();
