@@ -27,7 +27,6 @@ public class SearchWeb {
                     System.out.println("URL for the page that contains " + word + "is " + urlString);
                     break;
                 }
-
                 for (String s : getSubURLs(urlString)) {
                     if (!listOfTraversedURLs.contains(s)) {
                         listOfPendingURLs.add(s);
@@ -35,6 +34,7 @@ public class SearchWeb {
                 }
             }
         }
+        System.out.println(word + "not found");
     }
 
     public static ArrayList<String> getSubURLs(String urlString) {
