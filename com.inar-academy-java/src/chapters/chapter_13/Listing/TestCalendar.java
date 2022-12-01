@@ -29,5 +29,7 @@ public class TestCalendar {
 
 
         System.out.println("November 30, 2022 is a " + dayNameOfWeek[calendar.get(Calendar.DAY_OF_WEEK) - 1]);
+
+        System.out.println(calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
     }
 }

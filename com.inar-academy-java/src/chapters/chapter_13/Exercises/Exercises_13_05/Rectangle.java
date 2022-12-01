@@ -1,6 +1,6 @@
-package chapters.chapter_13.Listing;
+package chapters.chapter_13.Exercises.Exercises_13_05;
 
-public class Rectangle extends GeometricObject {
+public class Rectangle extends ComparableGeometricObject {
     private double width;
     private double height;
 
@@ -16,6 +16,10 @@ public class Rectangle extends GeometricObject {
         super(color, filled);
         this.width = width;
         this.height = height;
+    }
+    public String toString() {
+        return super.toString() + "\nWidth: " + width + "\nHeight: " + height +
+                "\nArea: " + this.getArea() + "\nPerimeter: " + this.getPerimeter();
     }
 
     @Override
