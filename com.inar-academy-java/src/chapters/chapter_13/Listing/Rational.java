@@ -1,7 +1,5 @@
 package chapters.chapter_13.Listing;
 
-import java.math.BigInteger;
-
 public class Rational extends Number implements Comparable<Rational> {
     private long numerator;
     private long denominator;
@@ -55,7 +53,7 @@ public class Rational extends Number implements Comparable<Rational> {
         return numerator;
     }
 
-    public BigInteger getDenominator() {
+    public long getDenominator() {
         return denominator;
     }
     public Rational add(Rational secondRational) {
