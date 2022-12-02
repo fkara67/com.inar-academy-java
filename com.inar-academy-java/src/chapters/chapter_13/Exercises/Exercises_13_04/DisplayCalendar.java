@@ -24,7 +24,7 @@ public class DisplayCalendar {
 
         controlInput(month);
 
-        Calendar calendar = new GregorianCalendar(year,month,1);
+        Calendar calendar = new GregorianCalendar(year, month,1);
         printMonth(year,month,calendar);
 
     }
@@ -33,7 +33,7 @@ public class DisplayCalendar {
         // Print the headings of the calendar
         printMonthTitle(year, month);
         // Print the body of the calendar
-        printMonthBody(year, month, calendar);
+        printMonthBody(calendar);
     }
 
     public static void printMonthTitle(int year, int month) {
@@ -61,7 +61,7 @@ public class DisplayCalendar {
         return monthName;
     }
 
-    public static void printMonthBody(int year, int month, Calendar calendar) {
+    public static void printMonthBody(Calendar calendar) {
         // Get start day of the week for the first date in the month
         int startDay = calendar.get(Calendar.DAY_OF_WEEK) - 1;
 
@@ -69,7 +69,7 @@ public class DisplayCalendar {
         int numberOfDaysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 
         // Pad space before the first day of the month
-        int i = 0;
+        int i ;
         for (i = 0; i < startDay; i++) {
             System.out.print("    ");
         }
