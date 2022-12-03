@@ -7,7 +7,8 @@ public class TestRationalWithBigInteger {
         RationalWithBigInteger o = new RationalWithBigInteger(BigInteger.ONE, new BigInteger("2"));
         RationalWithBigInteger a = new RationalWithBigInteger(new BigInteger("3"), new BigInteger("2"));
         RationalWithBigInteger b = new RationalWithBigInteger(BigInteger.ONE, new BigInteger("2"));
-        RationalWithBigInteger c = new RationalWithBigInteger(new BigInteger("5"), new BigInteger("6"));
+        RationalWithBigInteger c = new RationalWithBigInteger(new BigInteger("-5"), new BigInteger("6"));
+        System.out.println("c is " + c);
 
         System.out.println(o.add(b));
         System.out.println(c.add(a));

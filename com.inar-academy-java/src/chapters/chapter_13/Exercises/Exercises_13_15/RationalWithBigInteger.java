@@ -13,7 +13,7 @@ public class RationalWithBigInteger extends Number implements Comparable<Rationa
     public RationalWithBigInteger(BigInteger numerator,BigInteger denominator) {
         BigInteger gcd = numerator.gcd(denominator);
         this.numerator = numerator.divide(gcd).multiply
-                ((numerator.compareTo(BigInteger.ZERO) > 0) ? BigInteger.ONE : new BigInteger("-1"));
+                ((denominator.compareTo(BigInteger.ZERO) > 0) ? BigInteger.ONE : new BigInteger("-1"));
         this.denominator = denominator.divide(gcd).abs();
     }
 

@@ -10,7 +10,7 @@ public class Rational extends Number implements Comparable<Rational> {
     }
     public Rational(long numerator, long denominator) {
         long gcd = gcd(numerator, denominator);
-        this.numerator = ((numerator > 0) ? 1 : -1) * numerator / gcd;
+        this.numerator = ((denominator > 0) ? 1 : -1) * (numerator / gcd);
         this.denominator = Math.abs(denominator / gcd);
     }
 

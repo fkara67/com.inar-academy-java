@@ -12,9 +12,15 @@ public class ConvertDecimalsToFractions {
         String decimal = input.next();
 
         String[] parts = decimal.split("\\.");
-        String all = parts[0] + parts[1];
-        RationalWithBigInteger r = new RationalWithBigInteger(new BigInteger(all),
-                new BigInteger((int) Math.pow(10,parts[1].length()) + ""));
-        System.out.println("The fraction number is " + r);
+        if (parts.length == 2) {
+            String all = parts[0] + parts[1];
+            RationalWithBigInteger r = new RationalWithBigInteger(new BigInteger(all),
+                    new BigInteger((int) Math.pow(10,parts[1].length()) + ""));
+            System.out.println("The fraction number is " + r);
+        }
+        else
+            System.out.println("The fraction number is " + Integer.parseInt(parts[0]));
+
+        BigInteger a = new BigInteger("-325");
     }
 }
