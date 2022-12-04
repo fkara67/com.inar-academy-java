@@ -11,7 +11,7 @@ public class GetMinInList {
         System.out.println("Minimum value in the list: " + getMin(list));
         System.out.println("The index of min value in the list: " + getMinIndex(list));
     }
-    private static void addRandomValuesToList(List list, int size) {
+    public static void addRandomValuesToList(List list, int size) {
         for (int i = 0; i < size; i++) {
             list.add((int) (Math.random() * 100));
         }
