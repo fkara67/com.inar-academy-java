@@ -14,6 +14,11 @@ public class MyMap {
         m.put(1, 60);
         m.put(3, 60);
 
+        for (int value : m.values()) {
+            System.out.println(value);
+        }
+        System.out.println("--------------------");
+
         String resume = "tarik yaklasik 5 yildir Amazonda calisiyorum Java ile su projeyi yaptim" +
                 "sonra yine java kullanarak su projede yer aldim " +
                 "Selenium Java ve TestNG dersleri vererek Inar Academy" +
