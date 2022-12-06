@@ -12,11 +12,12 @@ public class MyMap {
         m.put(1,40);
         m.put(2, 50);
         m.put(1, 60);
+        m.put(3, 60);
 
         String resume = "tarik yaklasik 5 yildir Amazonda calisiyorum Java ile su projeyi yaptim" +
                 "sonra yine java kullanarak su projede yer aldim " +
                 "Selenium Java ve TestNG dersleri vererek Inar Academy" +
-                " ogerencilerinin ise girmesinde yardimci olmaya calistim";
+                " ogerencilerinin ise girmesinde yardimci olmaya calistim Testing benim için güzel";
 
         Set<String> jobDescriptionKeys = new HashSet<>();
         jobDescriptionKeys.add("selenium");
@@ -40,7 +41,7 @@ public class MyMap {
         }
         print(map);
     }
-    public static void print(Map map) {
+    public static void print(Map<String, Integer> map) {
         Set<String> set = map.keySet();
 
         for (String key : set) {

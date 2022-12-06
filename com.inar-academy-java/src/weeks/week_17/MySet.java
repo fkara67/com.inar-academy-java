@@ -9,8 +9,6 @@ public class MySet {
      * 1 - Set can only store Objects
      * 2 - Set can only store unique values
      * 3 - Set does  store the values in a random order
-     *
-     * @param args
      */
     public static void main(String[] args) {
         Set<Integer> set = new HashSet<>();
@@ -25,7 +23,7 @@ public class MySet {
     }
     public static void addRandomValuesToList(Set set, int n) {
         for (int i = 0; i < n; i++) {
-            int number = (int) (Math.random() * 100);
+            int number = (int) (Math.random() * 10);
             set.add(number);
             System.out.println(number + " Number is added to the set");
         }
