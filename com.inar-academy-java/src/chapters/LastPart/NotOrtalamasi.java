@@ -16,6 +16,10 @@ public class NotOrtalamasi {
         for (int note : notes) {
             sum += note;
         }
-        System.out.println("Average of your notes: " + sum / lessons.length);
+        double average = (double) sum / lessons.length;
+        System.out.println("Average of your notes: " + average);
+        String result = average > 60 ? "Passed" : "Failed";
+        System.out.println(result);
+
     }
 }
